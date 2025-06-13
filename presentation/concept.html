@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .pixel-border {
+        border: 3px solid #4a90e2;
+        border-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="6" height="6"><rect width="6" height="6" fill="%234a90e2"/></svg>') 3;
+        image-rendering: pixelated;
+      }
+      
+      .title-text {
+        font-family: 'Courier New', monospace;
+        text-shadow: 2px 2px 0px #000;
+        letter-spacing: 1px;
+      }
+      
+      .content-text {
+        font-family: 'Arial', sans-serif;
+        text-shadow: 1px 1px 0px rgba(0,0,0,0.5);
+      }
+      
+      .feature-card {
+        background: rgba(74, 144, 226, 0.1);
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(74, 144, 226, 0.3);
+        transition: all 0.3s ease;
+      }
+      
+      .feature-card:hover {
+        background: rgba(74, 144, 226, 0.2);
+        border-color: rgba(74, 144, 226, 0.5);
+        transform: translateY(-2px);
+      }
+      
+      .crystal-icon {
+        animation: float 3s ease-in-out infinite;
+      }
+      
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container p-8">
+      <!-- Header -->
+      <div class="flex items-center mb-8">
+        <div class="crystal-icon mr-4">
+          <i class="fas fa-gem text-3xl text-blue-300"></i>
+        </div>
+        <h1 class="title-text text-5xl font-bold text-white">Game Concept</h1>
+      </div>
+      
+      <!-- Main Content Grid -->
+      <div class="grid grid-cols-2 gap-8 h-full">
+        <!-- Left Column - Core Concept -->
+        <div class="space-y-6">
+          <div class="feature-card p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+              <i class="fas fa-scroll text-2xl text-yellow-400 mr-3"></i>
+              <h2 class="title-text text-2xl text-white">Core Story</h2>
+            </div>
+            <p class="content-text text-gray-200 leading-relaxed">
+              Ancient crystals contain the essence of magic and memory. As industrial technology harnesses crystal energy for Magitek machinery, the balance between nature and technology is disrupted.
+            </p>
+          </div>
+          
+          <div class="feature-card p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+              <i class="fas fa-globe text-2xl text-green-400 mr-3"></i>
+              <h2 class="title-text text-2xl text-white">World Setting</h2>
+            </div>
+            <p class="content-text text-gray-200 leading-relaxed">
+              A diverse world spanning lush forests, imposing mountains, steampunk cities, and ancient ruins. Each region tells part of the larger story through environmental storytelling.
+            </p>
+          </div>
+          
+          <div class="feature-card p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+              <i class="fas fa-users text-2xl text-purple-400 mr-3"></i>
+              <h2 class="title-text text-2xl text-white">Characters</h2>
+            </div>
+            <p class="content-text text-gray-200 leading-relaxed">
+              Multiple playable characters with unique backgrounds and motivations. Personal journeys intersect with the larger conflict between preservation and progress.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Right Column - Key Features -->
+        <div class="space-y-4">
+          <h2 class="title-text text-3xl text-white mb-6 text-center">Key Features</h2>
+          
+          <div class="grid grid-cols-1 gap-4">
+            <div class="feature-card p-4 rounded-lg flex items-center">
+              <i class="fas fa-sword text-xl text-red-400 mr-4"></i>
+              <div>
+                <h3 class="title-text text-lg text-white">Active Time Battle System</h3>
+                <p class="content-text text-sm text-gray-300">Strategic combat with timing elements</p>
+              </div>
+            </div>
+            
+            <div class="feature-card p-4 rounded-lg flex items-center">
+              <i class="fas fa-gem text-xl text-blue-400 mr-4"></i>
+              <div>
+                <h3 class="title-text text-lg text-white">Crystal Resonance Magic</h3>
+                <p class="content-text text-sm text-gray-300">Customizable abilities through crystal attunement</p>
+              </div>
+            </div>
+            
+            <div class="feature-card p-4 rounded-lg flex items-center">
+              <i class="fas fa-map text-xl text-green-400 mr-4"></i>
+              <div>
+                <h3 class="title-text text-lg text-white">Expansive World</h3>
+                <p class="content-text text-sm text-gray-300">Diverse regions with unique environments</p>
+              </div>
+            </div>
+            
+            <div class="feature-card p-4 rounded-lg flex items-center">
+              <i class="fas fa-route text-xl text-yellow-400 mr-4"></i>
+              <div>
+                <h3 class="title-text text-lg text-white">Branching Storylines</h3>
+                <p class="content-text text-sm text-gray-300">Player choices influence character development</p>
+              </div>
+            </div>
+            
+            <div class="feature-card p-4 rounded-lg flex items-center">
+              <i class="fas fa-search text-xl text-purple-400 mr-4"></i>
+              <div>
+                <h3 class="title-text text-lg text-white">Rich Side Content</h3>
+                <p class="content-text text-sm text-gray-300">Quests and secrets reward exploration</p>
+              </div>
+            </div>
+            
+            <div class="feature-card p-4 rounded-lg flex items-center">
+              <i class="fas fa-palette text-xl text-pink-400 mr-4"></i>
+              <div>
+                <h3 class="title-text text-lg text-white">16-bit Pixel Art</h3>
+                <p class="content-text text-sm text-gray-300">Classic aesthetic with modern polish</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Bottom Decoration -->
+      <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+        <div class="flex space-x-2">
+          <div class="w-2 h-2 bg-blue-400 rounded-full"></div>
+          <div class="w-2 h-2 bg-purple-400 rounded-full"></div>
+          <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

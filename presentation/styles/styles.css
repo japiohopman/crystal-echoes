@@ -1,0 +1,171 @@
+/* styles.css */
+
+/* -- CSS Variabelen voor makkelijk beheer -- */
+:root {
+  --bg-gradient-start: #1a1a2e;
+  --bg-gradient-mid: #16213e;
+  --bg-gradient-end: #0f3460;
+  
+  --text-color: #f0f0f0;
+  --text-shadow-color: #000;
+  
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-bg-hover: rgba(255, 255, 255, 0.1);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --profile-border: rgba(255, 255, 255, 0.2);
+  
+  --header-footer-bg: rgba(0, 0, 0, 0.6);
+
+  --accent-color: #a0c4ff; /* Lichte accentkleur voor details */
+
+  --font-heading: 'Cinzel', serif;
+  --font-body: 'Roboto', sans-serif;
+}
+
+/* -- Algemene Stijlen -- */
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text-color);
+  background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-mid) 50%, var(--bg-gradient-end) 100%);
+  background-attachment: fixed; /* Zorgt dat de gradient niet meescrollt */
+}
+
+main {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  text-shadow: 2px 2px 4px var(--text-shadow-color);
+  font-weight: 700;
+}
+
+/* -- Header & Hero -- */
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: var(--header-footer-bg);
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  margin: 1rem auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
+}
+
+/* -- Wereld Sectie -- */
+#wereld .continent {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    transition: background-color 0.3s;
+}
+
+#wereld .continent:hover {
+    background-color: var(--card-bg-hover);
+}
+
+/* -- Helden Sectie -- */
+.character-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.character {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.character:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  background: var(--card-bg-hover);
+}
+
+.character-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.profile {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid var(--profile-border);
+  object-fit: cover;
+  flex-shrink: 0; /* Voorkomt dat de afbeelding krimpt */
+}
+
+.character-header h3 {
+    margin: 0;
+}
+
+.character-details {
+    flex: 1;
+}
+
+/* Definition List voor karakter info */
+dl {
+    margin: 0;
+}
+dt {
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-top: 0.5rem;
+    font-family: var(--font-heading);
+}
+dd {
+    margin-left: 0;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    font-weight: 300;
+}
+
+.story-arc {
+  background: linear-gradient(90deg, #ff6b6b 0%, #feca57 50%, #48dbfb 100%);
+  height: 4px;
+  border-radius: 2px;
+  margin-top: 1rem;
+}
+
+/* -- Footer -- */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  background-color: var(--header-footer-bg);
+  font-size: 0.9rem;
+}
+
+
+/* -- Responsive design voor mobiele apparaten -- */
+@media (max-width: 768px) {
+    main {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .character-grid {
+        grid-template-columns: 1fr; /* 1 kolom op mobiel */
+    }
+}
