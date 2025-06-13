@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        position: relative;
+        overflow: hidden;
+      }
+      .title-text { font-family: 'Courier New', monospace; text-shadow: 2px 2px 0px #000; letter-spacing: 1px; }
+      .content-text { font-family: 'Arial', sans-serif; text-shadow: 1px 1px 0px rgba(0,0,0,0.5); }
+      .team-card { background: rgba(74, 144, 226, 0.1); backdrop-filter: blur(10px); border: 2px solid rgba(74, 144, 226, 0.3); transition: all 0.3s ease; }
+      .team-card:hover { background: rgba(74, 144, 226, 0.2); border-color: rgba(74, 144, 226, 0.5); transform: translateY(-2px); }
+      .crystal-icon { animation: pulse 2s ease-in-out infinite; }
+      @keyframes pulse { 0%, 100% { opacity: 0.7; transform: scale(1); } 50% { opacity: 1; transform: scale(1.1); } }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container p-8">
+      <div class="flex items-center mb-8">
+        <div class="crystal-icon mr-4"><i class="fas fa-users text-3xl text-green-300"></i></div>
+        <h1 class="title-text text-5xl font-bold text-white">Team Structure</h1>
+      </div>
+      
+      <div class="grid grid-cols-3 gap-6">
+        <div class="space-y-4">
+          <div class="team-card p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+              <i class="fas fa-crown text-2xl text-yellow-400 mr-3"></i>
+              <h2 class="title-text text-xl text-white">Leadership</h2>
+            </div>
+            <div class="space-y-2">
+              <div class="flex items-center">
+                <i class="fas fa-user text-yellow-400 mr-2"></i>
+                <span class="content-text text-sm text-gray-200">Project Director</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-lightbulb text-orange-400 mr-2"></i>
+                <span class="content-text text-sm text-gray-200">Creative Director</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-cog text-blue-400 mr-2"></i>
+                <span class="content-text text-sm text-gray-200">Technical Director</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-gamepad text-purple-400 mr-2"></i>
+                <span class="content-text text-sm text-gray-200">Design Director</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-tasks text-green-400 mr-2"></i>
+                <span class="content-text text-sm text-gray-200">Production Manager</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="team-card p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+              <i class="fas fa-palette text-2xl text-pink-400 mr-3"></i>
+              <h2 class="title-text text-xl text-white">Art Team</h2>
+            </div>
+            <div class="space-y-2">
+              <div class="flex items-center">
+                <i class="fas fa-paint-brush text-pink-400 mr-2"></i>
+                <span class="content-text text-sm text-gray-200">Art Director</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-user-friends text-blue-400 mr-2"></i>
+                <span class="content-text text-sm text-gray-200">Character Artists (2)</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-mountain text-green-400 mr-2"></i>
+                <span class="content-text text-sm text-gray-200">Environment Artists (2)</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-desktop text-cyan-400 mr-2"></i>
+                <span class="content-text text-sm text-gray-200">UI Artist</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-magic text-purple-400 mr-2"></i>
+                <span class="content-text text-sm text-gray-200">VFX Artist</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="space-y-4">
+          <div class="team-card p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+              <i class="fas fa-code text-2xl text-cyan-400 mr-3"></i>
+              <h2 class="title-text text-xl text-white">Programming</h2>
+            </div>
+            <div class="space-y-2">
+              <div class="flex items-center">
+                <i class="fas fa-user-tie text-cyan-400 mr-2"></i>
+                <span class="content-text text-sm text-gray-200">Lead Programmer</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-gamepad text-blue-400 mr-2"></i>
+                <span class="content-text text-sm text-gray-200">Gameplay Programmers (2)</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-desktop text-green-400 mr-2"></i>
+                <span class="content-text text-sm text-gray-200">UI Programmer</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-tools text-orange-400 mr-2"></i>
+                <span class="content-text text-sm text-gray-200">Tools Programmer</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="team-card p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+              <i class="fas fa-puzzle-piece text-2xl text-purple-400 mr-3"></i>
+              <h2 class="title-text text-xl text-white">Design Team</h2>
+            </div>
+            <div class="space-y-2">
+              <div class="flex items-center">
+                <i class="fas fa-user-tie text-purple-400 mr-2"></i>
+                <span class="content-text text-sm text-gray-200">Lead Game Designer</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-cogs text-blue-400 mr-2"></i>
+                <span class="content-text text-sm text-gray-200">Systems Designers (2)</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-map text-green-400 mr-2"></i>
+                <span class="content-text text-sm text-gray-200">Level Designers (2)</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-book text-yellow-400 mr-2"></i>
+                <span class="content-text text-sm text-gray-200">Narrative Designer</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="team-card p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+              <i class="fas fa-volume-up text-2xl text-green-400 mr-3"></i>
+              <h2 class="title-text text-xl text-white">Audio Team</h2>
+            </div>
+            <div class="space-y-2">
+              <div class="flex items-center">
+                <i class="fas fa-user-tie text-green-400 mr-2"></i>
+                <span class="content-text text-sm text-gray-200">Audio Director</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-music text-blue-400 mr-2"></i>
+                <span class="content-text text-sm text-gray-200">Composers (2)</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-volume-down text-purple-400 mr-2"></i>
+                <span class="content-text text-sm text-gray-200">Sound Designer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="space-y-4">
+          <div class="team-card p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+              <i class="fas fa-bug text-2xl text-red-400 mr-3"></i>
+              <h2 class="title-text text-xl text-white">QA Team</h2>
+            </div>
+            <div class="space-y-2">
+              <div class="flex items-center">
+                <i class="fas fa-user-tie text-red-400 mr-2"></i>
+                <span class="content-text text-sm text-gray-200">QA Lead</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-users text-blue-400 mr-2"></i>
+                <span class="content-text text-sm text-gray-200">QA Testers (3-4)</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="team-card p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+              <i class="fas fa-handshake text-2xl text-orange-400 mr-3"></i>
+              <h2 class="title-text text-xl text-white">Support</h2>
+            </div>
+            <div class="space-y-2">
+              <div class="flex items-center">
+                <i class="fas fa-clipboard-list text-orange-400 mr-2"></i>
+                <span class="content-text text-sm text-gray-200">Producers (2)</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-comments text-blue-400 mr-2"></i>
+                <span class="content-text text-sm text-gray-200">Community Manager</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="team-card p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+              <i class="fas fa-chart-line text-2xl text-blue-400 mr-3"></i>
+              <h2 class="title-text text-xl text-white">Team Size</h2>
+            </div>
+            <div class="space-y-3">
+              <div class="flex justify-between">
+                <span class="content-text text-sm text-gray-200">Core Team</span>
+                <span class="content-text text-sm text-green-400">20-25</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="content-text text-sm text-gray-200">Peak Team</span>
+                <span class="content-text text-sm text-yellow-400">30-35</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="content-text text-sm text-gray-200">External Support</span>
+                <span class="content-text text-sm text-blue-400">5-10</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

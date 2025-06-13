@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .pixel-border {
+        border: 4px solid #4a90e2;
+        border-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8"><rect width="8" height="8" fill="%234a90e2"/></svg>') 4;
+        image-rendering: pixelated;
+      }
+      
+      .title-text {
+        font-family: 'Courier New', monospace;
+        text-shadow: 2px 2px 0px #000, 4px 4px 0px rgba(0,0,0,0.3);
+        letter-spacing: 2px;
+      }
+      
+      .subtitle-text {
+        font-family: 'Arial', sans-serif;
+        text-shadow: 1px 1px 0px #000;
+      }
+      
+      .crystal-glow {
+        animation: glow 2s ease-in-out infinite alternate;
+      }
+      
+      @keyframes glow {
+        from { filter: drop-shadow(0 0 10px #4a90e2); }
+        to { filter: drop-shadow(0 0 20px #87ceeb); }
+      }
+      
+      .stars {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: 
+          radial-gradient(2px 2px at 20px 30px, #fff, transparent),
+          radial-gradient(2px 2px at 40px 70px, #fff, transparent),
+          radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+          radial-gradient(1px 1px at 130px 80px, #fff, transparent),
+          radial-gradient(2px 2px at 160px 30px, #fff, transparent);
+        background-repeat: repeat;
+        background-size: 200px 100px;
+        animation: sparkle 3s linear infinite;
+      }
+      
+      @keyframes sparkle {
+        from { opacity: 0.7; }
+        to { opacity: 1; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container flex items-center justify-center relative">
+      <div class="stars"></div>
+      
+      <!-- Main Content -->
+      <div class="text-center z-10 relative">
+        <!-- Crystal Icon -->
+        <div class="crystal-glow mb-8">
+          <i class="fas fa-gem text-6xl text-blue-300"></i>
+        </div>
+        
+        <!-- Main Title -->
+        <h1 class="title-text text-7xl font-bold text-white mb-4">
+          CRYSTAL ECHOES
+        </h1>
+        
+        <!-- Subtitle -->
+        <h2 class="subtitle-text text-2xl text-blue-200 mb-8">
+          A 16-bit Era JRPG inspired by Final Fantasy VI
+        </h2>
+        
+        <!-- Decorative Elements -->
+        <div class="flex justify-center items-center space-x-8 mb-8">
+          <div class="w-16 h-1 bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
+          <i class="fas fa-sword text-2xl text-yellow-400"></i>
+          <div class="w-16 h-1 bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
+        </div>
+        
+        <!-- Game Development Plan -->
+        <p class="subtitle-text text-xl text-gray-300">
+          Game Development Plan & Documentation
+        </p>
+        
+        <!-- Date -->
+        <p class="subtitle-text text-sm text-gray-400 mt-4">
+          June 7, 2025
+        </p>
+      </div>
+      
+      <!-- Corner Decorations -->
+      <div class="absolute top-4 left-4">
+        <div class="pixel-border w-16 h-16 bg-blue-900 bg-opacity-50 flex items-center justify-center">
+          <i class="fas fa-gamepad text-blue-300"></i>
+        </div>
+      </div>
+      
+      <div class="absolute top-4 right-4">
+        <div class="pixel-border w-16 h-16 bg-blue-900 bg-opacity-50 flex items-center justify-center">
+          <i class="fas fa-magic text-purple-300"></i>
+        </div>
+      </div>
+      
+      <div class="absolute bottom-4 left-4">
+        <div class="pixel-border w-16 h-16 bg-blue-900 bg-opacity-50 flex items-center justify-center">
+          <i class="fas fa-map text-green-300"></i>
+        </div>
+      </div>
+      
+      <div class="absolute bottom-4 right-4">
+        <div class="pixel-border w-16 h-16 bg-blue-900 bg-opacity-50 flex items-center justify-center">
+          <i class="fas fa-users text-orange-300"></i>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
